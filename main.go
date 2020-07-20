@@ -51,7 +51,7 @@ func worker(jobChan <-chan string, resChan chan<- string, wg *sync.WaitGroup) {
 		}
 
 		if resp.TLS != nil && len(resp.TLS.PeerCertificates) > 0 {
-			resChan <- resp.TLS.PeerCertificates[0].Subject.CommonName
+			resChan <- fmt.Sprintf("%s,%s", resp.TLS.PeerCertificates[0].Subject.CommonName, job) 
 		}
 	}
 
