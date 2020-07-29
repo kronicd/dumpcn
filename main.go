@@ -81,7 +81,7 @@ func worker(jobChan <-chan string, resChan chan<- string, wg *sync.WaitGroup) {
 			//resChan <- fmt.Sprintf("%s,%s", resp.TLS.PeerCertificates[0].Subject.CommonName, job)
 			valid := config.VerifyPeerCertificate(certChain, [][]*x509.Certificate{})
 			if valid != nil {
-				fmt.Fprintf(os.Stderr,"Invalid")
+				fmt.Fprintf(os.Stderr,"Invalid: %s\n",job)
 				// continue
 			} else {
 				resChan <- fmt.Sprintf("%s,%s", resp.TLS.PeerCertificates[0].Subject.CommonName, job)
