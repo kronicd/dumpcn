@@ -16,7 +16,7 @@ $ time ./dumpcn -t=100 < opendns-top-domains.txt > /dev/null
 ## Installation
 
 ```
-$ go get -u github.com/samirettali/dumpcn
+$ go get -u github.com/kronicd/dumpcn
 ```
 
 ## Usage
@@ -28,4 +28,9 @@ $ cat domains.txt | ./dumpcn
 Change number of threads:
 ```
 $ cat domains.txt | ./dumpcn -t=100
+```
+
+Shoutz:
+```
+Thx to swarlz and csto for helping me with bool comparisons, its hard
 ```
