@@ -44,9 +44,9 @@ func worker(jobChan <-chan string, resChan chan<- string, wg *sync.WaitGroup) {
 			opts.Intermediates.AddCert(cert)
 		}
 		_, err := certs[0].Verify(opts)
-		if err != nil && strings.Contains(err.Error(), "certificate has expired or is not yet valid") {
-		 	return nil
-		 }
+		//if err != nil && strings.Contains(err.Error(), "certificate has expired or is not yet valid") {
+		// 	return nil
+		// }
 		return err
 	}
 	var client = &http.Client{
